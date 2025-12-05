@@ -1,6 +1,7 @@
 import hero from '../assets/images/headshot_bw.png';
 import avatar from '../assets/images/patrick-photo_bw.png';
 import type { SiteConfig } from '../types';
+const base = import.meta.env.BASE_URL || '/';
 
 const siteConfig: SiteConfig = {
     website: 'https://example.com',
@@ -18,11 +19,11 @@ const siteConfig: SiteConfig = {
     headerNavLinks: [
         {
             text: 'Home',
-            href: '/'
+            href: `${base}`
         },
         {
             text: 'Projects',
-            href: '/projects'
+            href: `${base}projects`
         },
         // {
         //     text: 'Blog',
