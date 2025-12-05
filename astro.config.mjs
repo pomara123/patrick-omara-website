@@ -9,7 +9,7 @@ export default defineConfig({
     site: isProd
         ? 'https://pomara123.github.io/patrick-omara-website'
         : 'http://localhost:4321',
-    base: isProd ? '/patrick-omara-website' : '/',
+    base: isProd ? '/patrick-omara-website/' : '/',
     vite: {
         plugins: [tailwindcss()]
     },
