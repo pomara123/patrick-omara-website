@@ -37,15 +37,15 @@ const siteConfig: SiteConfig = {
     footerNavLinks: [
         {
             text: 'About',
-            href: '/about'
+            href: `${base}about`
         },
         {
             text: 'Contact',
-            href: '/contact'
+            href: `${base}contact`
         },
         {
             text: 'Terms',
-            href: '/terms'
+            href: `${base}terms`
         },
         // {
         //     text: 'Download theme',
@@ -68,7 +68,7 @@ const siteConfig: SiteConfig = {
         actions: [
             {
                 text: 'Get in Touch',
-                href: '/contact'
+                href: `${base}contact`
             }
         ]
     },
