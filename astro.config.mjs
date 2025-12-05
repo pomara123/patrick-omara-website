@@ -2,13 +2,15 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
-import siteConfig from './src/data/site-config';
 
-// https://astro.build/config
+// Detect if we are in production (GitHub Pages) or dev
+const isProd = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
-    site: siteConfig.website,
+    site: isProd ? 'https://astronaut.github.io' : 'http://localhost:4321',
+    base: isProd ? '/patrick-omara-website/' : '/',
     vite: {
         plugins: [tailwindcss()]
     },
-    integrations: [mdx(), sitemap()]
+    integrations: [mdx(), sitemap()],
 });
