@@ -1,21 +1,21 @@
 import hero from '../assets/images/headshot_bw.png';
-import avatar from '../assets/images/patrick-photo_bw.png';
+import avatar from '../assets/images/patrick-photo.jpg';
 import type { SiteConfig } from '../types';
 const base = import.meta.env.BASE_URL || '/';
 
 const siteConfig: SiteConfig = {
-    website: 'https://example.com',
+    website: 'https://pomara123.github.io/patrick-omara-website/',
     avatar: {
         src: avatar,
-        alt: 'Ethan Donovan'
+        alt: "Patrick O'Mara"
     },
     title: "Patrick O'Mara",
     subtitle: 'Biotech IT and Digital Leader',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
-    image: {
-        src: '/dante-preview.jpg',
-        alt: 'Dante - Astro.js and Tailwind CSS theme'
-    },
+    description: 'Patrick OMara professional website',
+    // image: {
+    //     src: '/dante-preview.jpg',
+    //     alt: 'Dante - Astro.js and Tailwind CSS theme'
+    // },
     headerNavLinks: [
         {
             text: 'Home',
