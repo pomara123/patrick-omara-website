@@ -8,40 +8,50 @@ import Nav from '../components/Nav.astro';
 export type Props = HeadProps & { showHeader?: boolean };
 
 const { showHeader = true, ...head } = Astro.props;
+const GA_ID = 'G-3QLCY5G6T0';
 ---
 
 <!doctype html>
 <html lang="en" class="wrap-break-words antialiased">
-    <head>
-        <BaseHead {...head} />
-       
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QLCY5G6T0"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+  <head>
+    <BaseHead {...head} />
 
-            gtag('config', 'G-3QLCY5G6T0');
-        </script>
-        <!-- End Google Analytics -->
+    <!-- Google Analytics -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}');
+    </script>
+    <!-- End Google Analytics -->
 
-        <script>
-            if (localStorage.theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            }
-        </script>
-        <ClientRouter />
-        <script is:inline src="/theme-toggle.js"></script>
-    </head>
-    <body class="bg-main text-main">
-        <div class="flex min-h-screen flex-col px-4 md:px-8">
-            <Nav />
-            {showHeader && <Header />}
-            <main class="mx-auto w-full max-w-3xl grow">
-                <slot />
-            </main>
-            <Footer />
-        </div>
-    </body>
+    <script>
+      // Apply dark theme if set in localStorage
+      if (localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+
+    <ClientRouter />
+    <script is:inline src="/theme-toggle.js"></script>
+  </head>
+
+  <body class="bg-main text-main">
+    <div class="flex min-h-screen flex-col px-4 md:px-8">
+      <Nav />
+      {showHeader && <Header />}
+      <main class="mx-auto w-full max-w-3xl grow">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+
+    <!-- SPA route tracking for Google Analytics -->
+    <script>
+      document.addEventListener('astro:route', () => {
+        gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+      });
+    </script>
+  </body>
 </html>
