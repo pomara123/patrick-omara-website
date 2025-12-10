@@ -17,7 +17,7 @@ The DMTA Request System is a comprehensive workflow platform designed to orchest
 ## Objectives
 
 1. Build a unified system to intake, route, and manage experiment requests across all DMTA stages.
-2. Integrate directly with the new Core LIMS to pull authoritative sample data and synchronize results back into legacy systems, including ERP and the company website.
+2. Integrate directly with the new Core LIMS to pull authoritative sample data and synchronize results back into downstream systems, including ERP and the company website.
 3. Improve traceability, accountability, and governance across cross-functional workflows involving hundreds of scientists.
 4. Replace the outdated legacy process with a flexible, extensible system that supports evolving scientific and operational requirements.
 
@@ -53,7 +53,7 @@ The legacy request system was disconnected from the new LIMS platform, making it
 
 ## Technology Stack
 
-- Request System: Jira (yes, we used Jira as an DMTA request tool)
+- DMTA Request System: Jira
 - LIMS: Core LIMS  
 - Integrations: Boomi  
 - Backend / Logic: Java, JavaScript, SQL  

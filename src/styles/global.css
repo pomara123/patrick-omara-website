@@ -12,45 +12,39 @@
     --bg-main: #f2f1ec;
     --bg-muted: #eae9e1;
     --border-main: #171717;
+    /* Accent options (pick one or keep both) */
+    --accent-slate-blue: #475c7a;       /* Slate Blue */
+    --accent-forest-green: #1b4d3e;     /* Forest Green */
 }
+
+html {
+    /* Subtle gradient using forest green */
+    background: linear-gradient(
+        to bottom right,
+        var(--bg-main),
+        color-mix(in srgb, var(--accent-forest-green) 8%, transparent)
+    );
+}
+
 html.dark {
     --text-main: #f2f1ec;
     --bg-main: #171717;
     --bg-muted: #242424;
     --border-main: #f2f1ec;
+
+    /* Dark mode gradient if desired */
+    background: linear-gradient(
+        to bottom right,
+        var(--bg-main),
+        color-mix(in srgb, var(--accent-forest-green) 6%, transparent)
+    );
 }
 
 /* Cyan */
-/*
-:root {
-    --text-main: #162a2b;
-    --bg-main: #d6e0e2;
-    --bg-muted: #ccd8db;
-    --border-main: #162a2b;
-}
-html.dark {
-    --text-main: #d6e0e2;
-    --bg-main: #162a2b;
-    --bg-muted: #1c3537;
-    --border-main: #d6e0e2;
-}
-*/
+/* ...existing commented code... */
 
 /* Green */
-/*
-:root {
-    --text-main: #3a4238;
-    --bg-main: #f3efe6;
-    --bg-muted: #eee9dc;
-    --border-main: #3a4238;
-}
-html.dark {
-    --text-main: #f3efe6;
-    --bg-main: #5e6c5b;
-    --bg-muted: #596756;
-    --border-main: #f3efe6;
-}
-*/
+/* ...existing commented code... */
 
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
@@ -81,7 +75,7 @@ html.dark {
     }
 
     .prose a {
-        @apply underline font-normal decoration-1 underline-offset-2 decoration-dashed hover:decoration-solid;
+        @apply underline decoration-[var(--accent-forest-green)] decoration-2 underline-offset-2 hover:decoration-[var(--accent-slate-blue)];
     }
 
     .prose :where(h1, h2, h3, h4, h5, h6) {

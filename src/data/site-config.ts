@@ -59,7 +59,7 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'People, Technology, Data, and Scientific Process Leader',
+        title: 'Driving Data, Technology, and Scientific Excellence',
         text: "I am Patrick O’Mara, a data and technology leader who believes that the intersection of people, technology, science, and processes is central to a successful biotech or pharma organization. I take a practical, grounded approach to implementing thoughtful strategy through agility, collaboration, and scalable solutions.",
         image: {
             src: hero,

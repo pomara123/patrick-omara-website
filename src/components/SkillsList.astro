@@ -1,0 +1,113 @@
+---
+const skillCategories = [
+  {
+    category: "Leadership & Strategy",
+    items: [
+      "Team leadership & management",
+      "AI/digital transformation strategy",
+      "Cross-functional stakeholder alignment",
+      "Change management & communication",
+      "Budget ownership & vendor management",
+      "Program/portfolio management",
+      "MSP selection & oversight",
+      "Agile/Scrum facilitation",
+      "Roadmap development",
+      "Process mapping",
+      "Risk management",
+      "Decision frameworks",
+      "Requirements gathering"
+    ]
+  },
+  {
+    category: "Cloud & DevOps",
+    items: [
+      "Google Cloud Platform (GCP)",
+      "AWS",
+      "Azure",
+      "Serverless architecture",
+      "CI/CD pipelines",
+      "GitHub Actions",
+      "Apache Airflow",
+      "BigQuery",
+      "Cloud Build",
+      "Cloud Run",
+      "Cloud Compute",
+      "Docker",
+      "Terraform",
+      "Pulumi",
+      "Flyway"
+    ]
+  },
+  {
+    category: "Informatics & Systems",
+    items: [
+      "Custom and COTS LIMS/ELN/LES",
+      "CDD Vault",
+      "Scientific request platforms",
+      "ERP/PIMS integrations",
+      "Lab automation integration",
+      "Oracle",
+      "PostgreSQL",
+      "SQL",
+      "Linux",
+      "Streaming pipelines",
+      "Batch processing pipelines",
+      "GMP workflows",
+      "Automated backups & DR"
+    ]
+  },
+  {
+    category: "Programming & Tools",
+    items: [
+      "Python",
+      "Java",
+      "JavaScript/TypeScript",
+      "Django",
+      "LangChain",
+      "Jira",
+      "Confluence",
+      "BitBucket",
+      "GitOps",
+      "Boomi",
+      "Veeam",
+      "Egnyte",
+      "Google Workspace",
+      "Office 365",
+      "PleaseReview",
+      "Jupyter"
+    ]
+  }
+];
+
+const mid = Math.ceil(skillCategories.length / 2);
+const col1 = skillCategories.slice(0, mid);
+const col2 = skillCategories.slice(mid);
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+  <div class="prose">
+    {col1.map(category => (
+      <>
+        <strong>{category.category}</strong>
+        <div class="flex flex-wrap gap-2 mt-2">
+          {category.items.map(item => (
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">{item}</span>
+          ))}
+        </div>
+      </>
+    ))}
+  </div>
+
+  <div class="prose">
+    {col2.map(category => (
+      <>
+        <strong>{category.category}</strong>
+        <div class="flex flex-wrap gap-2 mt-2">
+          {category.items.map(item => (
+            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm">{item}</span>
+          ))}
+        </div>
+      </>
+    ))}
+  </div>
+</div>
